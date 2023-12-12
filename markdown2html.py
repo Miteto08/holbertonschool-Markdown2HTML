@@ -17,15 +17,15 @@ def random_string(stringLength=10):
 fn_md = "{}.md".format(random_string())
 fn_html = "{}.html".format(random_string())
 
-# remove initial MD file
+'''# remove initial MD file'''
 if os.path.exists(fn_md):
     os.remove(fn_md)
 
-# remove initial HTML file
+'''# remove initial HTML file'''
 if os.path.exists(fn_html):
     os.remove(fn_html)
 
-# create MD file
+'''# create MD file'''
 c = """
 # title
 """
@@ -49,7 +49,7 @@ with open(fn_html, "r") as f:
         print("H1 not found: {}".format(all_tag_names[0]))
     print("OK", end="")
 
-# delete files
+'''# delete files'''
 if os.path.exists(fn_md):
     os.remove(fn_md)
 if os.path.exists(fn_html):
