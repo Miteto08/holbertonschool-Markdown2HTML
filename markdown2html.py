@@ -18,9 +18,9 @@ if __name__ == "__main__":
         line_list = []
         for lines in read_file.readlines():
             number_of_hashes = 0
-            for char in lines:
-                for index in range(len(char)):
-                    if char[index] == '#':
+            for line in lines:
+                for car in range(len(line)):
+                    if line[car] == '#':
                         number_of_hashes += 1
             lines = lines.rstrip('\r\n')
             line_list.append("<h{}>{}</h{}>".format(number_of_hashes, lines.replace('#',''), number_of_hashes))
