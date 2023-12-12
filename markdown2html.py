@@ -13,3 +13,17 @@ if __name__ == "__main__":
     if not path.exists(sys.argv[1]):
         print('Missing {}'.format(sys.argv[1]), file=sys.stderr)
         exit(1)
+    '''Headings Markdown'''
+    with open(sys.argv[1], 'r') as read_file:
+        line_list = []
+        for lines in read_file.readlines():
+            number_of_hashes = 0
+            for char in lines:
+                for index in range(len(char)):
+                    if char[index] == '#':
+                        number_of_hashes += 1
+            lines = lines.rstrip('\r\n')
+            line_list.append("<h{}>{}</h{}>".format(number_of_hashes, lines.replace('#',''), number_of_hashes))
+        with open(sys.argv[2], 'a') as write_file:
+            for line in line_list:
+                write_file.write('{}\n'.format(line))
