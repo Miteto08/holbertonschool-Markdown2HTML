@@ -1,6 +1,6 @@
-__**Markdown to HTML Converter**__
+#Markdown to HTML Converter
 
-**Description**
+##**Description**
 
 This project involves creating a Python script, markdown2html.py, that converts Markdown files to HTML. The script parses various Markdown syntax elements and generates corresponding HTML tags. The goal is to facilitate the conversion and rendering of Markdown files for GitHub.
 
