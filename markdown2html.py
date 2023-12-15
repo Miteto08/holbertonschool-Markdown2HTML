@@ -23,7 +23,8 @@ if __name__ == "__main__":
                     if line[car] == '#':
                         number_of_hashes += 1
             lines = lines.rstrip('\r\n')
-            line_list.append("<h{}>{}</h{}>".format(number_of_hashes, lines.replace('#',''), number_of_hashes))
+            if number_of_hashes != 0:
+                line_list.append("<h{}>{}</h{}>".format(number_of_hashes, lines.replace('#',''), number_of_hashes))
         with open(sys.argv[2], 'a') as write_file:
             for line in line_list:
                 write_file.write('{}\n'.format(line))
